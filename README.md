@@ -1,5 +1,5 @@
 # WeatherApp
-# Going to make a desktop application in java that uses weatherAPI to provide real time weather information
+Going to make a desktop application in java that uses weatherAPI to provide real time weather information
 This will be broken down into 3 milestones
 # Milestone 1: 
 connect to the weatherAPI and parse returned information
