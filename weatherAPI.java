@@ -36,6 +36,7 @@ public weatherAPI{
     HttpResponse<String> response = null;
     try{
       response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+      System.out.println("this works");
     }catch (IOException e){
       System.out.println(e.getMessage());
     }catch (InterruptedException e){
