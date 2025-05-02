@@ -1,17 +1,20 @@
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.net.URI;
 import java.net.http.HttpClient;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-public weatherAPI{
+public class weatherAPI{
   private static String readFile(String fileName){
     String data = "";
     try {
       File file = new File(fileName);
       Scanner sc = new Scanner(file);
       data = sc.nextLine();
-      file.close();
+      sc.close();
     } catch(FileNotFoundException e){
       data = "fail";
     }
@@ -26,7 +29,7 @@ public weatherAPI{
     Scanner sc = new Scanner(System.in);
     System.out.print("Enter a city");
     String city = sc.nextLine();
-    
+    sc.close();
     HttpRequest request = HttpRequest.newBuilder()
       .uri(URI.create("http://api.weatherapi.com/v1/current.json"))
       .header("key", API_KEY)
